@@ -1,4 +1,5 @@
 import { html, css, LitElement } from 'lit';
+import './MyComponent.js';
 
 export class LionDemoWorkshop extends LitElement {
   static styles = css`
@@ -27,7 +28,9 @@ export class LionDemoWorkshop extends LitElement {
   render() {
     return html`
       <h2>${this.header} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <my-component @click=${this.__increment}
+        >Increment with a LionButton</my-component
+      >
     `;
   }
 }
