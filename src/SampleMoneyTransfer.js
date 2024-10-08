@@ -2,8 +2,9 @@ import { html, css, LitElement } from 'lit';
 import './components/NewButton.js';
 import './components/NewCollapsible.js';
 import './components/NewInputAmount.js';
+import './components/NewTelDropdown.js';
 
-export class LionDemoWorkshop extends LitElement {
+export class SampleMoneyTransfer extends LitElement {
   static styles = css`
     :host {
       min-height: 100vh;
@@ -36,11 +37,13 @@ export class LionDemoWorkshop extends LitElement {
 
   static properties = {
     amount: { type: Number },
+    telNumber: { type: String },
   };
 
   constructor() {
     super();
     this.amount = 0;
+    this.telNumber = '';
   }
 
   _handleInputChange(e) {
@@ -52,7 +55,12 @@ export class LionDemoWorkshop extends LitElement {
   render() {
     return html`
       <div class="form">
-        <h2>Base Components</h2>
+        <h2>Money Transfer Page</h2>
+        <new-tel-dropdown
+          name="telNumber"
+          @model-value-changed=${e => this._handleInputChange(e)}
+        >
+        </new-tel-dropdown>
         <new-input-amount
           label="Amount"
           name="amount"
@@ -63,7 +71,8 @@ export class LionDemoWorkshop extends LitElement {
         <new-collapsible>
           <new-button slot="invoker">Confirm Transfer</new-button>
           <div slot="content">
-            The current transfer amount is: Php ${this.amount}
+            <p>The current transfer amount is: Php ${this.amount}</p>
+            <p>You are transfering to: ${this.telNumber}</p>
           </div>
         </new-collapsible>
       </div>
