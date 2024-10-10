@@ -18,6 +18,10 @@ export class LionDemoWorkshop extends LitElement {
         margin-bottom: 10px;
       }
 
+      #inputAmount {
+        width: 60%;
+      }
+
       h2 {
         margin-bottom: 25px;
       }
@@ -56,7 +60,7 @@ export class LionDemoWorkshop extends LitElement {
         <new-input-amount
           label="Amount"
           name="amount"
-          .formatOptions="$"
+          id="inputAmount"
           @model-value-changed=${e => this._handleInputChange(e)}
         >
         </new-input-amount>

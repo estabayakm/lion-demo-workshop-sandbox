@@ -8,13 +8,9 @@ class NewInputAmount extends LionInputAmount {
       css`
         :host {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-
-          div {
-            margin-right: 5px;
-          }
+          flex-direction: column;
+          justify-content: start-flex;
+          width: 100%;
         }
 
         ::slotted(input) {
@@ -23,6 +19,34 @@ class NewInputAmount extends LionInputAmount {
         }
       `,
     ];
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener('keydown', this._keydown);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener('keydown', this._keydown);
+  }
+
+  _keydown(e) {
+    const key = e.keyCode;
+    const value = Number(e.target.value);
+    switch (key) {
+      case 38:
+        e.target.value = String(value + 1);
+        this.modelValue = Number(e.target.value);
+        break;
+      case 40:
+        e.target.value = String(value - 1);
+        this.modelValue = Number(e.target.value);
+        break;
+      default:
+        break;
+    }
+    return true;
   }
 }
 customElements.define('new-input-amount', NewInputAmount);

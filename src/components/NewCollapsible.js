@@ -13,11 +13,6 @@ class NewCollapsible extends LionCollapsible {
           justify-content: center;
         }
 
-        ::slotted(new-button) {
-          font-size: 12px;
-          padding: 3px 6px;
-        }
-
         ::slotted(div) {
           font-family: cursive;
         }
