@@ -17,8 +17,7 @@ export class LionDemoWorkshop extends LitElement {
   // STEP 7: ADD BASIC INPUT HANDLING
   // _handleInputChange(e) {
   //   const element = e.target;
-  //   const elementName = element.getAttribute('name');
-  //   this[elementName] = element.modelValue;
+  //   this.amount = element.modelValue;
   // }
 
   // STEP 3: Invoke custom button component
