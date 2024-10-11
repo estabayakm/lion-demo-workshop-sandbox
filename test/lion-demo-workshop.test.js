@@ -19,7 +19,9 @@ describe('LionDemoWorkshop', () => {
   });
 
   it('can override the header via attribute', async () => {
-    const el = await fixture(html`<lion-demo-workshop header="attribute header"></lion-demo-workshop>`);
+    const el = await fixture(
+      html`<lion-demo-workshop header="attribute header"></lion-demo-workshop>`,
+    );
 
     expect(el.header).to.equal('attribute header');
   });
