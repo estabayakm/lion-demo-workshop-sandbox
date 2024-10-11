@@ -20,33 +20,33 @@ class NewInputAmount extends LionInputAmount {
       `,
     ];
   }
+  // STEP 5: EXTEND A LION COMPONENT'S FUNCTIONALITY
+  //   connectedCallback() {
+  //     super.connectedCallback();
+  //     this.addEventListener('keydown', this._keydown);
+  //   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.addEventListener('keydown', this._keydown);
-  }
+  //   disconnectedCallback() {
+  //     super.disconnectedCallback();
+  //     this.removeEventListener('keydown', this._keydown);
+  //   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    this.removeEventListener('keydown', this._keydown);
-  }
-
-  _keydown(e) {
-    const key = e.keyCode;
-    const value = Number(e.target.value);
-    switch (key) {
-      case 38:
-        e.target.value = String(value + 1);
-        this.modelValue = Number(e.target.value);
-        break;
-      case 40:
-        e.target.value = String(value - 1);
-        this.modelValue = Number(e.target.value);
-        break;
-      default:
-        break;
-    }
-    return true;
-  }
+  //   _keydown(e) {
+  //     const key = e.keyCode;
+  //     const value = Number(e.target.value);
+  //     switch (key) {
+  //       case 38:
+  //         e.target.value = String(value + 1);
+  //         this.modelValue = Number(e.target.value);
+  //         break;
+  //       case 40:
+  //         e.target.value = String(value - 1);
+  //         this.modelValue = Number(e.target.value);
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //     return true;
+  //   }
 }
 customElements.define('new-input-amount', NewInputAmount);

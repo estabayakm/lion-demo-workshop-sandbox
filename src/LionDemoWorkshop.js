@@ -1,67 +1,33 @@
 import { html, css, LitElement } from 'lit';
-import './components/NewButton.js';
-import './components/NewCollapsible.js';
-import './components/NewInputAmount.js';
+// STEP 1: IMPORT LION COMPONENT DIRECTLY
 
 export class LionDemoWorkshop extends LitElement {
-  static styles = css`
-    :host {
-      * {
-        margin-bottom: 10px;
-      }
-
-      #inputAmount {
-        width: 60%;
-      }
-
-      h2 {
-        margin-bottom: 25px;
-      }
-    }
-
-    .demo-component {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 30%;
-      border-radius: 20px;
-      background-color: #f4f4f4;
-    }
-  `;
+  // STEP 8: ADD SOME FINAL STYLING
+  static styles = css``;
 
   static properties = {
-    amount: { type: Number },
+    // amount: { type: Number },
   };
 
-  constructor() {
-    super();
-    this.amount = 0;
-  }
+  // constructor() {
+  //   super();
+  //   // this.amount = 0;
+  // }
 
-  _handleInputChange(e) {
-    const element = e.target;
-    const elementName = element.getAttribute('name');
-    this[elementName] = element.modelValue;
-  }
+  // STEP 7: ADD BASIC INPUT HANDLING
+  // _handleInputChange(e) {
+  //   const element = e.target;
+  //   const elementName = element.getAttribute('name');
+  //   this[elementName] = element.modelValue;
+  // }
 
+  // STEP 3: Invoke custom button component
+  // STEP 4: Invoke custom collapsible component
+  // STEP 6: Invoke custom input amount component
   render() {
     return html`
       <div class="demo-component">
         <h2>Base Components</h2>
-        <new-input-amount
-          label="Amount"
-          name="amount"
-          id="inputAmount"
-          @model-value-changed=${e => this._handleInputChange(e)}
-        >
-        </new-input-amount>
-        <new-collapsible>
-          <new-button slot="invoker">Confirm Transfer</new-button>
-          <div slot="content">
-            The current transfer amount is: Php ${this.amount}
-          </div>
-        </new-collapsible>
       </div>
     `;
   }
