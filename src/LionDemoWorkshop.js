@@ -27,6 +27,7 @@ export class LionDemoWorkshop extends LitElement {
     return html`
       <div class="demo-component">
         <h2>Base Components</h2>
+        <button>button</button>
       </div>
     `;
   }
