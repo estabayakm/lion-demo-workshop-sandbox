@@ -6,14 +6,6 @@ import './components/NewInputAmount.js';
 export class LionDemoWorkshop extends LitElement {
   static styles = css`
     :host {
-      min-height: 100vh;
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start-flex;
-
       * {
         margin-bottom: 10px;
       }
@@ -27,14 +19,14 @@ export class LionDemoWorkshop extends LitElement {
       }
     }
 
-    .form {
+    .demo-component {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 70%;
+      width: 30%;
       border-radius: 20px;
-      background-color: #f0f0f0;
+      background-color: #f4f4f4;
     }
   `;
 
@@ -55,7 +47,7 @@ export class LionDemoWorkshop extends LitElement {
 
   render() {
     return html`
-      <div class="form">
+      <div class="demo-component">
         <h2>Base Components</h2>
         <new-input-amount
           label="Amount"
