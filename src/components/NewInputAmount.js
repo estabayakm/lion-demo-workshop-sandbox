@@ -34,18 +34,18 @@ class NewInputAmount extends LionInputAmount {
   //   _keydown(e) {
   //     const key = e.keyCode;
   //     const value = Number(e.target.value);
-  //     switch (key) {
-  //       case 38:
-  //         e.target.value = String(value + 1);
-  //         this.modelValue = Number(e.target.value);
-  //         break;
-  //       case 40:
-  //         e.target.value = String(value - 1);
-  //         this.modelValue = Number(e.target.value);
-  //         break;
-  //       default:
-  //         break;
-  //     }
+  // //     switch (key) {
+  // //       case 38:
+  // //         e.target.value = String(value + 1);
+  // //         this.modelValue = Number(e.target.value);
+  // //         break;
+  // //       case 40:
+  // //         e.target.value = String(value - 1);
+  // //         this.modelValue = Number(e.target.value);
+  // //         break;
+  // //       default:
+  // //         break;
+  // //     }
   //     return true;
   //   }
 }
