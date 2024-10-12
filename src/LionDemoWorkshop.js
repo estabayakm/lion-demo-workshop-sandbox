@@ -31,7 +31,6 @@ export class LionDemoWorkshop extends LitElement {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       width: 70%;
       border-radius: 20px;
       background-color: #f0f0f0;
