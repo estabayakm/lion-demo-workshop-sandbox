@@ -74,6 +74,10 @@ export class SampleMoneyTransfer extends LitElement {
       }
     }
 
+    lion-dialog > div {
+      background-color: white;
+    }
+
     lion-input > input {
       border: 2px solid #525199;
       border-radius: 5px;
@@ -94,9 +98,11 @@ export class SampleMoneyTransfer extends LitElement {
     this.openDialog = false;
   }
 
+  /* eslint-disable */
   _toggleDialog(open) {
-    this.openDialog = open;
+    return () => (this.openDialog = open);
   }
+  /* eslint-enable */
 
   _handleDialog(e) {
     this.openDialog = e.detail.opened;
